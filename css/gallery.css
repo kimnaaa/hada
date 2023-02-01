@@ -1,0 +1,189 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* 슬라이드배너 꾸미기 */
+.bg {
+	background-color: #fffaf3;
+	overflow: hidden;
+}
+
+.bg_inner {
+	width: 1290px;
+	margin: auto;
+	position: relative;
+}
+
+.gallery {
+	position: absolute;
+	right: -500px;
+	width: 1320px;
+	height: 100%;
+	margin: 30px auto;
+	padding: 0 50px 40px;
+	box-sizing: border-box;
+	position: relative;
+}
+
+.gallery_inner {
+	width: 100%;
+	overflow: hidden;
+}
+
+.gallery .swiper-slide a {
+	width: 100%;
+	height: 100%;
+}
+
+.gallery .swiper-slide img {
+	display: block;
+	width: 230px;
+	border: 1.8px solid #ccc;
+	margin: 0 auto;
+	margin-bottom: 45px;
+}
+
+/*이동버튼 영역*/
+.gallery .swiper-button-next:after,
+.gallery .swiper-button-prev:after {
+	display: none;
+}
+
+/* 소스에 들어있는 버튼 삭제 */
+.gallery .swiper-button-next,
+.gallery .swiper-button-prev {
+	width: 27px;
+	height: 50px;
+}
+
+/* 버튼 크기 */
+.gallery .swiper-button-prev {
+	left: 0px;
+	background: url(../images/prev.png);
+}
+
+/* 버튼 위치, 버튼 이미지 */
+.gallery .swiper-button-next {
+	right: 0px;
+	background: url(../images/next.png);
+}
+
+/* 버튼 위치, 버튼 이미지 */
+.gallery .swiper-button-prev:hover {
+	background: url(../images/prev_hover.png);
+}
+
+/* 버튼 호버 이미지 */
+.gallery .swiper-button-next:hover {
+	background: url(../images/next_hover.png);
+}
+
+/* 버튼 호버 이미지 */
+
+/*블릿버튼 영역*/
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
+	margin-bottom: 20px;
+}
+.gallery .swiper-pagination-bullet {
+	background: transparent ;
+	width: 450px;
+	height: 23px;
+	font-family: 'pretendard';
+	opacity: 1;
+	font-size: 18px;
+	display: block;
+	font-weight: 400;
+	border-radius: 0;
+	overflow: hidden;
+}
+
+/* 블릿버튼 크기, 색상, 투명도 */
+.gallery .swiper-pagination-bullet-active {
+	opacity: 1;
+	height: 250px;
+}
+
+/* 블릿버튼 페이지 표시날 때 투명도 */
+.gallery .swiper-horizontal>.swiper-pagination-bullets,
+.gallery .swiper-pagination-bullets.swiper-pagination-horizontal {
+	left: -500px;
+	bottom: auto;
+	top: 0;
+	text-align: left;
+	width: 450px;
+}
+
+/* 블릿버튼 위치 */
+.gallery .swiper-pagination-bullet:before,
+.gallery .swiper-pagination-bullet:after{
+	display: block;
+ 
+}
+
+.gallery .swiper-pagination-bullet:nth-child(1):before {
+	content: '이토록 평범한 미래';
+	font-size: 20px;
+	width: 168px;
+}
+
+.gallery .swiper-pagination-bullet:nth-child(2):before {
+	content: '참을 수 없는 존재의 가벼움';
+	font-size: 20px;
+	width: 230px;
+}
+
+.gallery .swiper-pagination-bullet:nth-child(3):before {
+	content: '물고기는 존재하지 않는다';
+	font-size: 20px;
+	width: 220px;
+}
+/* 클릭시 내용 */
+.gallery .swiper-pagination-bullet:nth-child(1):after {
+	content: '김연수 · 문학동네   「국내소설」\A\A\A종말 이후의 사랑에 대한 여덟 편의 이야기\A\A모든 게 끝났다고 생각하는 시점에 이르러\A가장 좋은 미래, 그러니까\A이토록 평범한 미래를 상상할 수 있다면';
+	white-space: pre;
+	margin-top: 15px;
+	font-size: 16px;
+	margin-left: 15px;
+	border-left: rgb(170, 170, 170, 0.7) 1px solid;
+	padding-left: 15px;
+}
+
+.gallery .swiper-pagination-bullet:nth-child(2):after {
+	content: '밀란 쿤데라 · 민음사   「유럽소설」\A\A\A“그들은 서로 사랑했는데도\A상대방에게 하나의 지옥을 선사했다.”\A\A작가는 어떤 사랑 이야기, 특별한 동시에\A 잊을 수 없는 이야기를 들려준다.\A밀란 쿤데라의 역사적, 철학적 사유가 오롯이 담긴 작품';
+	white-space: pre;
+	margin-top: 15px;
+	font-size: 16px;
+	margin-left: 15px;
+	border-left: rgba(170, 170, 170, 0.7) 1px solid;
+	padding-left: 15px;
+}
+
+.gallery .swiper-pagination-bullet:nth-child(3):after {
+	content: '룰루 밀러 · 곰출판   「과학」\A\A\A“저의 바람은 당신이 이 책을 읽고 난 뒤\A이전과는 조금 다르게 세상을 바라보는 것이에요.”\A_ 룰루 밀러\A\A놀랍도록 흥미로운 과학 이야기를 렌즈 삼아 \A숨어 있는 삶의 질서를 끈질기게 파헤친다';
+	white-space: pre;
+	margin-top: 15px;
+	font-size: 16px;
+	margin-left: 15px;
+	border-left: rgb(170, 170, 170, 0.7) 1px solid;
+	padding-left: 15px;
+}
+
+.gallery .swiper-pagination-bullet-active:before{
+	font-weight: 600;
+	background:  url(../images/index/arrow.png) no-repeat 100% 50%;
+	
+}
+
+.gallery .swiper-slide img{
+width: 190px;
+margin-top: 30px;
+}
+
+.gallery .swiper-slide-active{
+	background: url(../images/index/shadow.png) no-repeat 30px bottom;
+}
+.gallery .swiper-slide-active img{
+	width: 230px;
+	margin-top: 0;
+}

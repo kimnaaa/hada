@@ -1,0 +1,1049 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css");
+
+@font-face {
+	font-family: 'SF_HambakSnow';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HambakSnow.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+
+}
+
+body {
+	background: #fffaf3;
+	font-family: 'Pretendard';
+	color: #221c1c;
+	min-width: 1290px;
+	font-size: 18px;
+}
+
+ul {
+	list-style: none;
+	color: #221c1c;
+}
+
+a {
+	text-decoration: none;
+	color: #221c1c;
+}
+
+
+/* 메뉴바 꾸미기 */
+.m_nav {
+	width: 100%;
+	height: 100px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	transition: all 0.7s;
+	z-index: 100;
+}
+
+.mainlogo {
+	width: 90px;
+	padding-top: 15px;
+	display: block;
+	margin: 0 auto;
+}
+
+/* 자바스크립트로 추가될 클래스 */
+.nav-up {
+	top: -100px;
+	/* 높이만큼 주기 */
+}
+
+/*움직이는 메뉴버튼*/
+
+input[id="menuicon"] {
+	display: none;
+}
+
+/*메뉴 아이콘 버튼 크기, 위치*/
+input[id="menuicon"]+label {
+	display: block;
+	width: 40px;
+	height: 35px;
+	position: fixed;
+	right: 30px;
+	top: 30px;
+	z-index: 2000;
+	transition: all 0.5s;
+	cursor: pointer;
+}
+
+/*메뉴 버튼 클릭했을 때 X버튼 색상*/
+input[id="menuicon"]:checked+label span {
+	background: #e6243f;
+}
+
+/*메뉴 두줄 버튼*/
+input[id="menuicon"]+label span {
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	background: #221c1c;
+	transition: all 0.5s;
+	transform-origin: right;
+}
+
+/* 메뉴 두줄 버튼 호버 */
+input[id="menuicon"]+label:hover span:nth-child(1) {
+	transform: scaleX(0.55);
+}
+
+input[id="menuicon"]+label:hover span:nth-child(2) {
+	width: 100%
+}
+
+input[id="menuicon"]+label span:hover span:nth-child(2) {
+	width: 100%;
+}
+
+input[id="menuicon"]+label span:nth-child(1) {
+	top: 5px;
+}
+
+input[id="menuicon"]+label span:nth-child(2) {
+	bottom: 5px;
+	width: 22px;
+	right: 0;
+}
+
+/*메뉴 버튼 클릭했을 때 세줄버튼에서 X버튼으로 바뀌는 모습*/
+input[id="menuicon"]:checked+label span:nth-child(1) {
+	top: 90%;
+	transform: translateY(-50%) rotate(45deg);
+}
+
+input[id="menuicon"]:checked+label span:nth-child(2) {
+	bottom: 90%;
+	transform: translateY(50%) rotate(-45deg);
+	width: 100%;
+}
+
+
+/*메뉴 창*/
+.sidebar {
+	width: 100%;
+	height: 100%;
+	background: #fffaf3;
+	position: fixed;
+	top: 0;
+	right: -100%;
+	z-index: 1000;
+	transition: all 0.5s;
+}
+
+input[id="menuicon"]:checked+label+div {
+	right: 0;
+}
+
+/* 메뉴 제이쿼리 끝 */
+/* 메뉴 시작 */
+.sidebox {
+	width: 1100px;
+	margin: 230px auto;
+	height: 500px;
+
+}
+
+.menulogo {
+	width: 150px;
+	padding-bottom: 66px;
+}
+
+.sidebar_left {
+	width: 400px;
+	height: 500px;
+	float: left;
+	margin-left: 130px;
+}
+
+.sns {
+	float: left;
+	padding-top: 5px;
+	transition: all 0.2s linear;
+}
+
+.info li img {
+	width: 25px;
+	height: 25px;
+	padding-right: 25px;
+}
+
+.info li:nth-child(2) img {
+	width: 24px;
+	height: 24px;
+}
+
+.info li {
+	padding-bottom: 5px;
+}
+
+.info {
+	padding-bottom: 20px;
+}
+
+.info li:nth-child(1) {
+	opacity: 0.5;
+	font-size: 16px;
+}
+
+.info li:nth-child(2) {
+	font-size: 18px;
+	transition: all 0.2s linear;
+}
+
+.sns:hover {
+	opacity: 0.7;
+}
+
+.info li:nth-child(2):hover {
+	opacity: 0.7;
+}
+
+.sidebar_right {
+	width: 50%;
+	height: 450px;
+	border-left: 1px solid #221c1c2f;
+	padding-left: 155px;
+	margin-top: 60px;
+	box-sizing: border-box;
+	float: right;
+}
+
+.sidebar_right ul {
+	padding-top: 15px;
+}
+
+.sidebar_right li {
+	font-size: 84px;
+	font-weight: 500;
+	padding-bottom: 8px;
+}
+
+.sidebar_right a {
+	position: relative;
+
+}
+
+.sidebar_right li a b {
+	width: 0px;
+	height: 8px;
+	background-color: #e6243f;
+	display: inline-block;
+	/* transform: scaleX(0); */
+	transition: all 1s;
+	transform-origin: left;
+
+}
+
+.sidebar_right li a:hover b {
+	width: 75px;
+	/* transform: scaleX(1); */
+	margin-right: 10px;
+}
+
+/* 메뉴 끝 */
+/* main banner */
+.main {
+	width: 100%;
+	height: 800px;
+	position: relative;
+}
+
+.main h1,
+.main h2 {
+	font-family: 'SF_HambakSnow';
+	font-style: italic;
+	font-size: 60px;
+	display: inline-block;
+	color: #fff5e8;
+	z-index: 10;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	letter-spacing: -1.5px;
+	line-height: 70px;
+}
+
+.main h1 {
+	margin: -125px 0 0 -580px;
+}
+
+.main h2 {
+	margin: 100px 0 0 260px;
+}
+
+
+
+
+
+
+
+
+.slogan {
+	width: 100%;
+	height: 600px;
+	margin: 230px auto 0;
+	text-align: center;
+	background: url(../images/index/circle.png) no-repeat center;
+}
+
+.slogan h2 {
+	font-family: 'SF_HambakSnow';
+	font-size: 70px;
+	letter-spacing: -3px;
+	padding-top: 230px;
+	padding-bottom: 50px;
+}
+
+.slogan h2 span {
+	font-size: 98px;
+}
+
+.slogan h2 b {
+	letter-spacing: -6px;
+}
+
+.slogan p {
+	padding-bottom: 7px;
+	font-size: 20px;
+}
+
+/* contents1 */
+h1 {
+	font-size: 30px;
+	font-weight: 600;
+}
+
+.menu {
+	background: url(../images/index/bg_signature.jpg) no-repeat center 175px, 
+	linear-gradient(to bottom, transparent 21.5%, #e6243f 21.5%, #e6243f 73.5%, transparent 73.5%);
+	opacity: 0.9;
+	width: 100%;
+	height: 810px;
+	margin-top: 210px;
+}
+
+.menu_in {
+	width: 1290px;
+	margin: 0 auto;
+}
+
+h3 {
+	font-size: 18px;
+	font-weight: 400;
+	padding-top: 10px;
+	opacity: 0.8;
+}
+
+.menu_in ul {
+	padding-top: 35px;
+}
+
+.menu_in ul li {
+	float: left;
+	width: 380px;
+	height: 530px;
+	background-color: #fff7ed;
+	text-align: center;
+	box-shadow: 7px 7px 5px #c0b1b165;
+	border-radius: 50px;
+	padding-top: 25px;
+	opacity: 1 !important;
+}
+
+.menu_in ul li:nth-child(2) {
+	margin: 0 75px;
+	margin-top: 110px;
+}
+
+.menu_in ul h4 {
+	font-size: 24px;
+	font-weight: 400;
+	padding-top: 42px;
+	padding-bottom: 20px;
+}
+
+[data-aos=fade-up] {
+	transform: translate3d(0, 450px, 0);
+}
+
+/* contents2 */
+.eu {
+	width: 1230px;
+	margin: 180px auto 0;
+	height: 750px;
+
+}
+
+.eu1 {
+	float: left;
+	padding-top: 35px;
+	position: relative;
+
+}
+
+.one {
+	position: absolute;
+	bottom: -60px;
+	right: -60px;
+}
+
+.eu2 {
+	float: left;
+	text-align: center;
+	width: 590px;
+	padding-top: 140px;
+}
+
+.eu2 p {
+	margin-bottom: 15px;
+	background: url(../images/index/point.png) no-repeat 24% 50%,
+		url(../images/index/point.png) no-repeat 76% 50%;
+}
+
+.eu2 h4 {
+	font-size: 18px;
+	font-weight: 400;
+	opacity: 0.7;
+	padding-bottom: 5px;
+}
+
+.down {
+	padding: 120px;
+}
+
+.eu3 {
+	float: right;
+	position: relative;
+	margin-top: 210px;
+}
+
+.eu3 img:nth-child(2) {
+	position: relative;
+}
+
+.one2 {
+	position: absolute;
+	left: -60px;
+	top: -80px;
+	z-index: 2;
+}
+
+.one {
+	animation: rotate2 15s linear infinite;
+}
+
+.one2 {
+	animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	50% {
+		transform: rotate(180deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes rotate2 {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	50% {
+		transform: rotate(-180deg);
+	}
+
+	100% {
+		transform: rotate(-360deg);
+	}
+}
+
+/* contents3 */
+.book {
+	width: 1290px;
+	margin: 130px auto 0;
+	height: 360px;
+}
+
+.book h1,
+h5 {
+	display: inline-block;
+}
+
+.book h5 {
+	font-weight: 400;
+	font-size: 16px;
+	opacity: 0.8;
+	padding-left: 8px;
+	padding-bottom: 10px;
+}
+
+.book_left,
+.book_right {
+	margin-top: 35px;
+	float: left;
+	position: relative;
+}
+
+.book_left {
+	padding-right: 20px;
+
+}
+
+.hover1,
+.hover2 {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.hover1,
+.hover2 {
+	display: none;
+}
+
+.book_left:hover .hover1 {
+	display: block;
+}
+
+.book_right:hover .hover2 {
+	display: block;
+}
+
+/* contents4 */
+.pick {
+	background-color: #fff5e8;
+	width: 100%;
+	height: 520px;
+	margin-top: 130px;
+	overflow: hidden;
+}
+
+.pick_in {
+	width: 1290px;
+	margin: 0 auto;
+}
+
+.pick_in h1 span {
+	font-family: 'SF_HambakSnow';
+	border-bottom: 3px solid #e6243f;
+}
+
+
+/* transform: scaleX(1); */
+
+
+.pick_in h1 {
+	padding-top: 40px;
+}
+
+
+/* contents5 */
+.goods {
+	margin: 150px auto 0;
+	width: 1290px;
+	height: 720px;
+	position: relative;
+}
+
+.goods_left {
+	width: 500px;
+	float: left;
+	margin-top: 25px;
+}
+
+.goods h1:nth-child(1) {
+	padding-bottom: 5px;
+}
+
+.goods p {
+	margin-top: 25px;
+	opacity: 0.8;
+}
+
+.here1 {
+	margin-top: 35px;
+}
+
+.here2 {
+	position: absolute;
+	top: 185px;
+	left: 57px;
+	z-index: -5;
+
+	/* transition: all linear 0.1s; */
+}
+
+.arrow:hover .here1 {
+	animation: right 0.7s linear;
+}
+
+@keyframes right {
+
+	0%,
+	100% {
+		opacity: 1;
+	}
+
+	50% {
+		/* transition: all linear 0.1s; */
+		transform: translateX(25px)
+	}
+}
+
+
+
+/* .arrow:hover .here2{
+	transform: translateX(13px);
+/* transition: all linear 0.1s; 
+}*/
+
+
+/* 사진 */
+.goods_right {
+	float: right;
+	width: 700px;
+	height: 682px;
+	display: flex;
+	flex-wrap: wrap;
+
+}
+
+.box2 {
+	margin-left: 60px;
+	margin-top: 25px;
+}
+
+.box3 {
+	margin-top: 20px;
+}
+
+.box4 {
+	margin-top: 45px;
+	margin-left: 60px;
+}
+
+.imgbox {
+	overflow: hidden;
+	width: 320px;
+	height: 320px;
+	border-radius: 50px;
+}
+
+.imgbox img {
+	transition: all 0.2s linear;
+}
+
+.imgbox:hover img {
+	transform: scale(1.1, 1.1);
+}
+
+/* contents6 */
+.insta {
+	width: 100%;
+	height: 565px;
+	background-color: #e6243f;
+	margin: 150px auto 0;
+	padding-top: 50px;
+	box-sizing: border-box;
+}
+
+.insta_in {
+	color: #fff5e8;
+	width: 1290px;
+	margin: 0 auto;
+
+}
+
+.insta_in h2 {
+	font-family: 'SF_HambakSnow';
+	font-size: 20px;
+	padding-top: 6px;
+	letter-spacing: 0.3px;
+	position: relative;
+	display: inline-block;
+}
+
+.insta_in h2::after {
+	content: "";
+	position: absolute;
+	bottom: -3px;
+	left: 0;
+	background-color: #fff5e8;
+	width: 100%;
+	height: 1.8px;
+	transform: scaleX(0);
+	transition: all 0.3s linear;
+	transform-origin: left;
+}
+
+.insta_in h2:hover::after {
+	transform: scaleX(1);
+
+}
+
+.insta_in a {
+	color: #fffaf3;
+}
+
+.insta_in ul {
+	margin-top: 35px;
+}
+
+.insta_in ul li {
+	float: left;
+	position: relative;
+	width: 315px;
+	height: 315px;
+	overflow: hidden;
+	
+}
+
+
+
+.heart{
+	background: url(../images/index/insta_heart.png) no-repeat;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 56px;
+	height: 52px;
+	margin: -26px 0 0 -28px;
+	opacity: 0;
+	transition: all 0.2s linear;
+}
+
+.insta_in ul li:hover .heart{
+opacity: 1;
+}
+
+.heart:hover {
+transform: scale(1.1, 1.1);
+}
+
+.hovercolor {
+	background-color: #333;
+	border-radius: 40px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: all 0.5s;
+}
+/* .insta_in ul li:hover::after{
+
+} */
+.insta_in ul li:hover .hovercolor {
+	opacity: 0.4;
+}
+
+.padding {
+	margin-left: 10px;
+}
+
+/* footer */
+.footer {
+	background-color: #221c1c;
+	width: 100%;
+	height: 350px;
+}
+
+.footer_in {
+	width: 1290px;
+	margin: 0 auto;
+	color: #fffaf3;
+	padding-top: 45px;
+	position: relative;
+}
+
+.footer_in h1 {
+	font-family: 'SF_HambakSnow';
+	font-size: 35px;
+	letter-spacing: -0.4px;
+	border-bottom: #fffaf34c 1.5px solid;
+	padding-bottom: 8px;
+	width: 560px;
+}
+
+.footer_in h1 span {
+	font-size: 48px;
+}
+
+.footer_in h1 b {
+	letter-spacing: -0.7px;
+}
+
+.foot_info {
+	margin-top: 88px;
+	opacity: 0.6;
+	font-size: 13px;
+	width: 560px;
+	float: left;
+}
+
+.footer_in a {
+	color: #fffaf3;
+}
+
+.foot_info p {
+	padding-bottom: 4px;
+}
+
+.foot_info ul li {
+	float: left;
+	margin-right: 10px;
+}
+
+.c {
+	margin-top: 40px;
+	opacity: 0.6;
+}
+
+/* 푸터 오른쪽 */
+.followus {
+	position: absolute;
+	width: 150px;
+	right: 22%;
+}
+
+.contactus {
+	position: absolute;
+	right: 0;
+	width: 200px;
+}
+
+.followus h5,
+.contactus h5 {
+	font-size: 14px;
+	opacity: 0.4;
+	margin-bottom: 40px;
+	margin-top: 30px;
+	font-weight: 400;
+}
+
+.followus li,
+.contactus li {
+	margin-bottom: 10px;
+	font-weight: 600;
+}
+
+.followus ul li a {
+	background: linear-gradient(to right, #fefefe00 50%, #e6243f 50%);
+	background-size: 200%;
+	transition: all 0.2s linear;
+	letter-spacing: 0.5px;
+}
+
+.followus ul li a:hover {
+	background-position: -100% 0;
+}
+
+.contactus a {
+	/* transition: border 1s linear;
+	transform-origin: left; */
+	position: relative;
+}
+
+.contactus li:nth-child(2) a {
+	letter-spacing: 0.5px;
+}
+
+.contactus span {
+	opacity: 0;
+	position: absolute;
+	top: -11px;
+	right: -19px;
+	font-size: 13px;
+	color: #e6243f;
+	letter-spacing: -0.5px;
+	transition: all 0.2s 0.5s;
+}
+
+.contactus a::after {
+	content: "";
+	position: absolute;
+	bottom: -3px;
+	left: 0;
+	background-color: #e6243f;
+	width: 100%;
+	height: 1.8px;
+	transform: scaleX(0);
+	transition: all 0.3s linear;
+	transform-origin: left;
+}
+
+.contactus a:hover::after {
+	/* opacity: 0.5; */
+
+	/* border-bottom: #e6243f 2px solid;
+	padding-bottom: 2px; */
+	transform: scaleX(1);
+
+}
+
+.contactus a:hover span {
+	opacity: 1;
+}
+
+/* 탑 버튼 */
+.top_ {
+	position: fixed;
+	right: 100px;
+	bottom: 100px;
+	z-index: 50;
+	width: 80px;
+	height: 80px;
+	background-color: #fffaf36e;
+	border-radius: 50%;
+}
+
+.top_btn {
+	position: relative;
+	opacity: 0.9;
+	top: 27px;
+	left: 23px;
+}
+
+.top_hover {
+	position: absolute;
+	top: 8%;
+	left: 6%;
+	transition: all 0.3s linear;
+}
+
+.top_:hover .top_hover {
+	animation: topbtn 1s linear infinite;
+
+}
+
+/* @keyframes topbtn{
+		0% {
+			transform: rotate(0deg);
+		}
+	
+		50% {
+			transform: rotate(180deg);
+		}
+	
+		100% {
+			transform: rotate(360deg);
+		}
+	
+} */
+
+@keyframes topbtn {
+	0% {
+		transform: scale(1, 1);
+	}
+
+	50% {
+		transform: scale(0.8, 0.8);
+	}
+
+	100% {
+		transform: scale(1, 1);
+	}
+
+
+}
+
+
+
+
+/* .followus ul li a{
+	position: relative;
+	z-index: 2;
+}
+
+.followus ul li a::after{
+content: "";
+position: absolute;
+bottom: 0;
+left: 0;
+background:linear-gradient(to right, #fefefe00 50%, #e6243f 50% );
+width: 220px;
+height: 20px;
+transform: scaleX(1);
+transition: all 0.2s linear;
+transform-origin: left;
+z-index: 1;
+}
+.followus ul li a:hover::after{
+	transform: scaleX();
+} */
+
+
+
+
+
+
+
+
+/* 
+.title {
+	padding-top: 35px;
+
+}
+
+.title> li {
+	padding-bottom: 20px;
+}
+
+.title> li:nth-child(1){
+	font-weight: 600;
+}
+.title_in {
+	margin: 15px 0 50px 15px;
+	padding-left: 15px;
+	border-left: #ccc 1px solid;
+}
+.title_in h5, h6{
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 400;
+}
+.title_in h6{
+	margin-left: 10px;
+	opacity: 0.8;
+   margin-bottom: 35px;
+}
+.margin{
+	margin-bottom: 15px;
+}
+.title_in p{
+	font-size: 16px;
+}
+
+
+
+.pick_left {
+	float: left;
+	width: 450px;
+}
+
+.pick_right {
+	float: left;
+	margin-top: 118px;
+}
+
+.book_img li {
+	float: left;
+	padding-left: 88px;
+} */
