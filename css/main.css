@@ -292,7 +292,15 @@ input[id="menuicon"]:checked+label+div {
 	height: 600px;
 	margin: 230px auto 0;
 	text-align: center;
-	background: url(../images/index/circle.png) no-repeat center;
+	/* background: url(../images/index/circle.png) no-repeat center; */
+	position: relative;
+}
+video{
+	position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+z-index: -1;
 }
 
 .slogan h2 {
